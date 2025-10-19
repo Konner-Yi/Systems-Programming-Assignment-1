@@ -24,6 +24,17 @@ int main(int argc, char const *argv[])
         for(long i=0;i<numArgs;i++){
             parentArr[i]=i;
         }
+        if(pid>0){
+            wait(NULL);
+            printf("Parent Array: ");
+            for(long i=0;i<numArgs;i++){
+                printf("%d ",parentArr[i]);
+
+            }
+            printf("\n");
+            free(parentArr);
+            parentArr=NULL;
+        }
         if(pid==0){
             printf("Parent PID=%d\n", getppid());
             int* childArr=malloc(sizeof(int)*numArgs);
@@ -38,16 +49,6 @@ int main(int argc, char const *argv[])
             free(childArr);
             childArr=NULL;
             exit(0);
-        }else{
-            wait(NULL);
-            printf("Parent Array: ");
-            for(long i=0;i<numArgs;i++){
-                printf("%d ",parentArr[i]);
-
-            }
-            printf("\n");
-            free(parentArr);
-            parentArr=NULL;
         }
         
 
