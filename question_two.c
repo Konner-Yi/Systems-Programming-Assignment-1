@@ -1,3 +1,10 @@
+/*
+ * CSCI 3310 System Programming
+ * Assignment 1 Question 2
+ * Team Members: Johnathan Forrester, Jack Harlock, Konner Yi, Brayden Johnson
+ * Group Number: Group 1
+ */
+
 #include<stdio.h>//printf
 #include<string.h>
 #include<unistd.h>//unix speciific
