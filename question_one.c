@@ -17,14 +17,14 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    pid_t pid = fork();
+    pid_t id = fork();
 
-    if (pid < 0) {
+    if (id < 0) {
         perror("fork failed");
         exit(EXIT_FAILURE);
     }
 
-    if (pid == 0) {
+    if (id == 0) {
         // Child 
         printf("Child process (PID: %d) executing command: %s\n", getpid(), argv[1]);
 
